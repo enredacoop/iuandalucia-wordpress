@@ -166,11 +166,12 @@ fieldset[disabled] .btn-primary-bootstrap.active {
 }
 .navbar-brand-image {
   float: left;
-  padding: 0 15px;
+  padding: -40px 0px 0px 0px;
 }
 @media (min-width: 768px) {
   .navbar > .container .navbar-brand-image {
-    margin-left: -15px;
+    margin-left: 720px;
+    margin-top:-90px; /*añadido para que la imagen suba. Se queda detrás del header*/
   }
 }
 /*
@@ -337,8 +338,8 @@ fieldset[disabled] .btn-primary-bootstrap.active {
 * ==========================================================================
 */
 .content-sidebar-wrapper {
-  padding-top: 50px;
-  padding-bottom: 50px;
+/*  padding-top: 50px;*/
+ padding-bottom: 30px;
 }
 @media (max-width: 767px) {
   .content-sidebar-wrapper {
@@ -610,11 +611,11 @@ dl.gallery-item img {
   word-wrap: break-word;
 }
 .entry-title a {
-  color: #333333;
+  color: #FF0000;
 }
 .entry-title a:hover,
 .entry-title a:focus {
-  color: #595959;
+  color: #AA0000;
 }
 .entry-title a:focus {
   outline: thin dotted;
@@ -738,10 +739,11 @@ dl.gallery-item img {
 * ==========================================================================
 */
 .footer-tail-sidebars {
-  background-color: #b51622;
+  background-color: #999;
   padding-top: 25px;
   padding-bottom: 25px;
-  border-top: solid 1px #87111a;
+  border-top: solid 0px #87111a;
+
 }
 .footer-tail-sidebars.widget-default .widget.widget-last,
 .footer-tail-sidebars.widget-inverse .widget.widget-last {
@@ -876,7 +878,7 @@ dl.gallery-item img {
   overflow: hidden;
   padding-bottom: 25px;
   margin-bottom: 25px;
-  border-bottom: solid 1px #cccccc;
+ /* border-bottom: solid 1px #cccccc;*/
 }
 .widget a {
   color: #333333;

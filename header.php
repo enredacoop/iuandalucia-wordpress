@@ -18,7 +18,7 @@
   <nav class="navbar navbar-static-top navbar-inverse" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
     <div class="container">
       
-      <div class="navbar-header">
+      <div class="navbar-header"><img src="<?php bloginfo('template_directory'); ?>/images/headers/iu_header.png">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-header-collapse">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
@@ -28,9 +28,11 @@
         <?php get_template_part( 'header', 'custom' ); ?>      
       </div>
       
-      <?php future_primary_menu(); ?>
+     
     
     </div>
   </nav>
-
+ 
 </header>
+<?php future_primary_menu(); ?>
+
