@@ -122,6 +122,7 @@ $user_id = get_query_var( 'author' );
 elseif ( is_singular() ) :
 ?>
 
+<!-- 
 <section class="loop-meta">
   <div class="container">
     <div class="row">    
@@ -130,7 +131,7 @@ elseif ( is_singular() ) :
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <?php
 endif;

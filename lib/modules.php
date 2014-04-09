@@ -50,6 +50,12 @@ function future_sidebars_init() {
 			'name' => __( 'Footer Tail Sidebar', 'future' ),
 			'id' => 'future-footer-tail-sidebar',
 			'description' => __( 'Widget area for footer tail.', 'future' )
+		),
+
+		'future-footer-tail-sidebar_2' => array(
+			'name' => __( 'Footer Tail Sidebar 2', 'future' ),
+			'id' => 'future-footer-tail-sidebar-2',
+			'description' => __( 'Widget area for footer tail 2. ', 'future' )
 		)
 	
 	);

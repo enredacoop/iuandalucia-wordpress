@@ -528,27 +528,40 @@ $future_theme_data = future_theme_data();
 $future_options = future_get_settings();
 
 /** Footer Copyright Logic */
-$future_copyright_code = __( '&copy; Copyright', 'future' ) . date( ' Y ' ) . ' - <a href="'. esc_url( home_url( '/' ) ) .'">'. get_bloginfo( 'name' ) .'</a>';	
+$future_copyright_code = __( '&copy; Copyleft', 'future' ) . date( ' Y ' ) . ' - <a href="'. esc_url( home_url( '/' ) ) .'">'. get_bloginfo( 'name' ) .'</a>';	
 ?>
 <div class="footer-tail-sidebars widget-inverse">
   <div class="container">  
     <div class="row">    
     
-      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
         <?php if ( ! dynamic_sidebar( 'future-footer-tail-sidebar' ) ): ?>
 	    <section class="widget widget_text">
 	      <div class="widget-inside">	        
 	        <div class="textwidget"><?php echo $future_copyright_code; ?></div>
-	      </div>
+	          </div>
 	    </section>
 	    <?php endif; ?>
+	  </div>    
+  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <?php if ( ! dynamic_sidebar( 'future-footer-tail-sidebar-2' ) ): ?>
+	    <section class="widget widget_text">
+	      <div class="widget-inside">	        
+	        <div class="textwidget"><?php echo $future_copyright_code; ?></div>
+	          </div>
+	    </section>
+	    <?php endif; ?>
+
+
+
+
       </div>
 
       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 	    <section class="widget widget_text">
 	      <div class="widget-inside">	        
 	        <div class="textwidget theme-info">
-	          <a href="<?php echo $future_theme_data['ThemeURI']; ?>" title="Future Theme">Future Theme</a> &sdot; <?php _e( 'Powered by', 'future' ); ?> <a href="http://wordpress.org/" title="WordPress">WordPress</a>
+	          <a href="http://iuandalucia.org" title="Izquierda Unida">Izquierda Unida</a> &sdot; <?php _e( 'Desarrollado con', 'future' ); ?> <a href="https://github.com/enredacoop/iuandalucia-wordpress" title="iuandalucia WP">WP</a>
 	        </div>
 	      </div>
 	    </section>
@@ -660,7 +673,8 @@ function future_primary_menu_cb() {
       <ul class="nav navbar-nav navbar-right">
       	<li class="active"><a href="'. admin_url( 'nav-menus.php?action=locations' ) .'">'. __( 'Please Assign Menu: Appearance > Menus > Manage Locations', 'future' ) .'</a></li>
       </ul>
-      </div
+
+       </div
       ';		 
 
 }
@@ -675,7 +689,7 @@ function future_primary_menu() {
 			'container_class' => 'collapse navbar-collapse navbar-header-collapse', 
 			'menu'            => 'future-primary-menu',
 			'theme_location'  => 'future-primary-menu',
-			'menu_class'      => 'nav navbar-nav navbar-right',
+			'menu_class'      => 'nav navbar-nav navbar-left',
 			'depth'           => 2,
 			'fallback_cb'     => 'future_primary_menu_cb',
 			'walker'          => new wp_bootstrap_navwalker()
@@ -705,12 +719,12 @@ function future_excerpt_length( $length ) {
 /** Returns a "Read more" link for content */
 add_filter( 'the_content_more_link', 'future_content_more_link', 10, 2 );
 function future_content_more_link( $more_link, $more_link_text ) {
-	return str_replace( array( 'more-link', $more_link_text ), array( 'entry-more-link entry-more-link-content btn btn-primary', '<span>'. __( 'Read More', 'future' ) .'</span>' ), $more_link );
+	return str_replace( array( 'more-link', $more_link_text ), array( 'entry-more-link entry-more-link-content btn btn-primary', '<span>'. __( 'Leer más', 'future' ) .'</span>' ), $more_link );
 }
 
 /** Returns a "Read more" link for excerpts */
 function future_continue_reading_link() {
-	return '<span class="entry-more-link-wrapper"><a href="'. esc_url( get_permalink() ) . '" class="entry-more-link entry-more-link-excerpt btn btn-primary"><span>'. __( 'Read More', 'future' ) .'</span></a></span>';
+	return '<span class="entry-more-link-wrapper"><a href="'. esc_url( get_permalink() ) . '" class="entry-more-link entry-more-link-excerpt btn btn-primary"><span>'. __( 'Leer más', 'future' ) .'</span></a></span>';
 }
 
 /** Replaces "[...]" (appended to automatically generated excerpts) with future_continue_reading_link(). */
