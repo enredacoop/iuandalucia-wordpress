@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<?php // get_template_part( 'loop-meta' ); ?>
+<?php get_template_part( 'loop-meta' ); ?>
 
 <div class="<?php future_cs_layout( array( 'cs_layout_bone' => 'content_sidebar_wrapper_class' ) ); ?>">
   <div class="container">
