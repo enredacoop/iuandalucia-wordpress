@@ -1,35 +1,33 @@
-<?php get_header(); ?>
+<?php get_template_part('parts/header'); ?>
 
-<?php get_template_part( 'loop-meta' ); ?>
+<div class="container">
 
-<div class="<?php future_cs_layout( array( 'cs_layout_bone' => 'content_sidebar_wrapper_class' ) ); ?>">
-  <div class="container">
-    <div class="row">
-  
-      <div class="<?php future_cs_layout( array( 'cs_layout_bone' => 'content_column_class' ) ); ?>">
-        <main class="content" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">   
-      
-          <?php if ( have_posts() ) : ?>
-        
-            <?php while ( have_posts() ) : the_post(); ?>
-          
-              <?php get_template_part( 'content', 'page' ); ?>
-          
-            <?php endwhile; ?>
-        
-          <?php else : ?>
-                    
-            <?php get_template_part( 'loop-error' ); ?>
-        
-          <?php endif; ?>        
-      
-        </main>
-      </div>
-    
-      <?php get_sidebar(); ?>
+  <div class="row">
 
+    <div class="col-xs-12 col-sm-8">
+      <div id="content" role="main">
+        <?php if(have_posts()): while(have_posts()): the_post();?>
+        <article role="article" id="post_<?php the_ID()?>" <?php post_class()?>>
+          <header>
+            <h2><?php the_title()?></h2>
+            <hr/>
+          </header>
+          <?php the_content()?>
+        </article>
+        <?php endwhile; ?>
+        <?php else: ?>
+        <?php wp_redirect(get_bloginfo('siteurl').'/404', 404); exit; ?>
+        <?php endif;?>
+      </div><!-- #content -->
     </div>
-  </div>
-</div>
-  
-<?php get_footer(); ?>
+
+    <div class="col-xs-6 col-sm-4" id="sidebar" role="navigation">
+      <div class="panel panel-default row">
+        <?php get_template_part('parts/sidebar-internal'); ?>
+      </div>
+    </div>
+
+  </div><!-- .row -->
+</div><!-- .container -->
+
+<?php get_template_part('parts/footer'); ?>
