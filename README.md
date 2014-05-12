@@ -9,7 +9,7 @@ Plantilla base del theme: http://simonpadbury.com/bst-bootstrap-3-starter-theme-
 
 * Plantilla realizada por ENREDA SCA (www.enreda.coop) para IU El Puerto http://iuelpuerto.org/
 
-#Licencia MIT http://opensource.org/licenses/MIT 
+* Licencia MIT http://opensource.org/licenses/MIT 
 
 
 ###Features
